@@ -1,0 +1,9 @@
+#IMAGE dISPLAY 
+import cv2
+print("packet Installed")
+img=cv2.imread("C:/Users/18ec5/PycharmProjects/pythonProject1/Resources/lena.png")
+cv2.imshow("work",img)
+
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
