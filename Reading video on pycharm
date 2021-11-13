@@ -1,0 +1,18 @@
+#video
+
+import cv2
+#creating cap object
+cap=cv2.VideoCapture("C:/Users/18ec5/PycharmProjects/pythonProject1/Resources/test_video.mp4")
+
+
+# video is sequence  of image so we will require while loop
+
+while True:
+      success,img =cap.read()  #sucess is like boolean which will tel if it was successful or not
+      cv2.imshow("video",img ) #img variable above
+      if cv2.waitKey(1) & 0xFF ==ord('q'):
+          break
+
+
+
+#waitkey is the delay and wait for keybord q press if u want to break out of loop
