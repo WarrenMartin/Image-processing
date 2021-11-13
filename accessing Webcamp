@@ -1,0 +1,12 @@
+import cv2
+print("check if imported")
+cap=cv2.VideoCapture(0)
+cap.set(3,640) #defining width with id number 3
+cap.set(4,480) #defining height with id number 4
+cap.set(10,1000)#setting the brightness with Id 10
+
+while True:
+    sucess,img=cap.read() #check video file to understand more
+    cv2.imshow("video",img)
+    if cv2.waitKey(1) & 0xFF ==ord("q"):
+        break
