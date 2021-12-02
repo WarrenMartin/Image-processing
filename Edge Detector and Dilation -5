@@ -7,9 +7,12 @@ imgCanny = cv2.Canny(img,100,100) #alot of edges so if u want to change u can ch
 
 imgDialation=cv2.dilate(imgCanny,kernel,iterations=1)
 #imagee dilation It is used for bridging gaps of character due to poor resolution.
+imgEroded=cv2.erode(imgDialation,kernel,iterations=1)
+
 
 cv2.imshow("All the Edges ",imgCanny)
 cv2.imshow("Dilation image",imgDialation)
+cv2.imshow("Eroded Image",imgEroded)
 
 
 cv2.waitKey(0)
