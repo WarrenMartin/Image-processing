@@ -1,0 +1,14 @@
+import cv2
+import numpy as np
+
+img=cv2.imread("Resources/cards.jpg")
+width,height =250,350#defining width an height 
+pts1=np.float32([[119,219],[287,188],[154,482],[352,440]])#defining 4 coordinates u want to crop #this value will be got from paint
+
+pts2=np.float32([[0,0],[width,0],[0,height],[width,height]])#defining 4 points in pts1
+matrix =cv2.getPerspectiveTransform(pts1,pts2)
+imgOutput=cv2.warpPerspective(img,matrix,(width,height))
+
+cv2.imshow("Card Image",img)
+cv2.imshow("Output",imgOutput)
+cv2.waitKey(0)
