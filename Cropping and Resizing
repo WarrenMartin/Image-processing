@@ -1,14 +1,23 @@
 import cv2
 import numpy as np
 
-img=cv2.imread("C:/Users/18ec5/PycharmProjects/pythonProject1/Resources/lena.png")
-print(img.shape)
-imgResize=cv2.resize(img,(300,200))
+#img =np.zeros((512,512))#grapy scale image
+img1=np.zeros((512,512,3),np.uint8)
+#print(img.shape)
+#img1[200:300,350:400]=255,0,0#[:] width and height
+#if u want to color the whole image
+#img1[:]=255,0,0 #whole image will become blue
+#creating line
+cv2.line(img1,(0,0),(300,300),(0,255,0),3)
+#0-0 and 300-300 is the dimension
+#0,255,0 is green line
+cv2.rectangle(img1,(0,0),(250,350),(0,0,255),2)#here the thickness is 2
+cv2.circle(img1,(400,50),30,(255,255,0),5)#30 is the radus
+#0-0 and 300-300 is the dimension
+#0,255,0 is green line
+cv2.putText(img1,"warren Martin",(300,100),cv2.FONT(),1,(0,150,0),1)
 
-cv2.imshow('Image',img)
-cv2.imshow("Resized image",imgResize)
+#cv2.imshow("image",img)
+cv2.imshow("image",img1)
 
-imgCropped =img[0:200,200:500]
-cv2.imshow("cropped",imgCropped)
-#here the height comes first and then the width whereas resize it is vv
 cv2.waitKey(0)
